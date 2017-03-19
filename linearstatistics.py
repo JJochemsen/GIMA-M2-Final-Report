@@ -15,6 +15,11 @@ dfFilter = df3[df3['WOZ'] <= 750]
 x = dfFilter['Utilitarian']
 #Declare which variable is the Y-variable
 y = dfFilter['WOZ']
+
+#Optional: calculate spearmans rho + p value
+#spearman = stats.spearmanr(x,y)
+#print spearman
+
 #Calculate and print basic linear statistics
 slope, intercept, r_value, p_value, slope_std_error = stats.linregress(x, y)
 print "slope, intercept, r_value, p_value, slope_std_error"
@@ -35,3 +40,4 @@ pylab.title('Mean trip length versus Non-Western Foreigners %')
 pylab.plot(x, y, 'o')
 pylab.plot(x, predict_y, 'k-')
 pylab.show()
+
